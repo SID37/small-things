@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public Transform player;
+    public PlayerController player;
     public ThingController spawnObject;
     public float interval = 1.0f;
 
@@ -20,6 +20,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         timeToSpawn -= Time.deltaTime;
+        if (!player.enabled) enabled = false;
         if (timeToSpawn <= 0) {
             timeToSpawn = interval;
             var thing = Instantiate(spawnObject);

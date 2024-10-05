@@ -7,7 +7,7 @@ public class ThingController : MonoBehaviour
 {
     public float speed = 1.0f;
     public float look_radius = 10;
-    public Transform player;
+    public PlayerController player;
 
     Rigidbody2D body;
     Vector3 deltaPos;
@@ -28,6 +28,11 @@ public class ThingController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!player.enabled) {
+            body.velocity = new Vector2(0, 0);
+            return;
+        }
+
         Vector3 velocity = new Vector3(0, 0, 0);
 
         Vector3 targetVector = deltaPos + player.transform.position - transform.position;
@@ -65,7 +70,7 @@ public class ThingController : MonoBehaviour
             });
             UpdateDeltaPos();
 
-            contact.collider.GetComponent<PlayerController>()?.Hit();
+            contact.collider.GetComponent<PlayerController>()?.Hit(contact.point);
         }
     }
 

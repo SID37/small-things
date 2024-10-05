@@ -311,9 +311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf8787199678c4479e639a151a04b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   reloadInterval: 0.2
-  hp: 10
+  hp: 3
+  spread: 5
+  bullets: 3
   gun: {fileID: 1244389898146253758}
   gunFirePoint: {fileID: 9168109021228528951}
   bullet: {fileID: 937891805820187199, guid: 5966a4c4adf0fd847a25e38181efd5ce, type: 3}

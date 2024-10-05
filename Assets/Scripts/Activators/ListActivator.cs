@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseActivator : MonoBehaviour
+public class ListActivator : BaseActivator
 {
-    public List<InputActivator> activators;
-    public bool activated = false;
+    public List<BaseActivator> activators;
 
     void Start()
     {
@@ -13,6 +12,7 @@ public class BaseActivator : MonoBehaviour
 
     void Update()
     {
+        if (activated) return;
         foreach (var activator in activators)
         {
             if (!activator.activated)
