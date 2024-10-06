@@ -12,6 +12,8 @@ public class ThingController : MonoBehaviour
 
     public Transform scaled;
 
+    public AudioSource source;
+
     Rigidbody2D body;
     Vector3 deltaPos;
 
@@ -34,6 +36,7 @@ public class ThingController : MonoBehaviour
         if (!player.enabled) {
             body.velocity = new Vector2(0, 0);
             animator.speed = 0;
+            source.Stop();
             return;
         }
 

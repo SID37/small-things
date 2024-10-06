@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
     public Image hintText;
     public Animator animator;
 
+    public AudioSource audioSource;
+    public List<AudioClip> hitSound;
+
+    public AudioSource gunAudioSource;
+
     private Rigidbody2D body;
     private float reloadTime = 0;
     private float deadAlpha = 0;
@@ -58,6 +63,7 @@ public class PlayerController : MonoBehaviour
                 float angle = Random.Range(-1.0f, 1.0f) * spread;
                 Fire(Quaternion.AngleAxis(angle, new Vector3(0, 0, 1)) * fireDelta);
             }
+            gunAudioSource.Play();
             gun.position -= new Vector3(fireDelta.normalized.x, fireDelta.normalized.y, 0).normalized * 0.5f;
             reloadTime = reloadInterval;
         }
@@ -114,6 +120,8 @@ public class PlayerController : MonoBehaviour
         mainCamera.transform.position -= new Vector3(hitCamera.x, hitCamera.y, 0);
 
         hp -= 1;
+        audioSource.clip = hitSound[hp];
+        audioSource.Play();
         if (hp <= 0)
         {
             StartCoroutine(RestartLevel(3));

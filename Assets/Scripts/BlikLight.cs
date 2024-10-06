@@ -11,6 +11,8 @@ public class BlikLight : MonoBehaviour
     public float range1 = 1;
     public float range2 = 1;
 
+    public AudioSource audioSource;
+
     SpriteRenderer sprite;
     float timer = 0;
     bool state1 = false;
@@ -28,6 +30,8 @@ public class BlikLight : MonoBehaviour
             state1 = !state1;
             sprite.color = state1 ? color1 : color2;
             timer = Random.Range(0, state1 ? range1 : range2);
+            if (audioSource != null)
+                audioSource.Play();
         }
     }
 }
