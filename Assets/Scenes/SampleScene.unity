@@ -447,6 +447,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 923927373}
+    - target: {fileID: 7583412604916643734, guid: df2b4f779f15431468ed1e57972a958e, type: 3}
+      propertyPath: interval
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2475,6 +2479,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 923927373}
+    - target: {fileID: 7583412604916643734, guid: df2b4f779f15431468ed1e57972a958e, type: 3}
+      propertyPath: interval
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2679,6 +2687,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 923927373}
+    - target: {fileID: 7583412604916643734, guid: df2b4f779f15431468ed1e57972a958e, type: 3}
+      propertyPath: interval
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3561,6 +3573,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 923927373}
+    - target: {fileID: 7583412604916643734, guid: df2b4f779f15431468ed1e57972a958e, type: 3}
+      propertyPath: interval
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4119,6 +4135,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 923927373}
+    - target: {fileID: 7583412604916643734, guid: df2b4f779f15431468ed1e57972a958e, type: 3}
+      propertyPath: interval
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4231,6 +4251,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 923927373}
+    - target: {fileID: 7583412604916643734, guid: df2b4f779f15431468ed1e57972a958e, type: 3}
+      propertyPath: interval
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

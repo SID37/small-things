@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
     {
         timeToSpawn -= Time.deltaTime;
         if (!player.enabled) enabled = false;
-        if (timeToSpawn <= 0) {
+        if (timeToSpawn <= 0 && (transform.position - player.transform.position).magnitude > 4) {
             timeToSpawn = interval;
             var thing = Instantiate(spawnObject);
             thing .transform.position = transform.position;
