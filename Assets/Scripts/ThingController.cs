@@ -8,6 +8,7 @@ public class ThingController : MonoBehaviour
     public float speed = 1.0f;
     public float look_radius = 10;
     public PlayerController player;
+    public Animator animator;
 
     Rigidbody2D body;
     Vector3 deltaPos;
@@ -30,6 +31,7 @@ public class ThingController : MonoBehaviour
     {
         if (!player.enabled) {
             body.velocity = new Vector2(0, 0);
+            animator.speed = 0;
             return;
         }
 

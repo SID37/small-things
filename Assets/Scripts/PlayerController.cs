@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
     void Fire(Vector3 delta)
     {
-        float maxDistance = 10;
+        float maxDistance = 5;
         var vector = new Vector2(delta.x, delta.y).normalized;
         Physics2D.queriesHitTriggers = false;
         RaycastHit2D hit = Physics2D.Raycast(gunFirePoint.position, new Vector2(delta.x, delta.y), maxDistance);

@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8b6ac72448eee304397a05ef7afd7f33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -287,7 +287,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e10195157d16bba49aa2b06dec027f52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -321,6 +321,8 @@ MonoBehaviour:
   bullet: {fileID: 937891805820187199, guid: 5966a4c4adf0fd847a25e38181efd5ce, type: 3}
   explosion: {fileID: 3903472083411868550, guid: 8824d46e15a02344bb46f747f907f51e, type: 3}
   mainCamera: {fileID: 9047341441203237820}
+  deadScreen: {fileID: 0}
+  hintText: {fileID: 0}
 --- !u!1 &8631980796638691152
 GameObject:
   m_ObjectHideFlags: 0
