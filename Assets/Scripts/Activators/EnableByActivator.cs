@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnableByActivator : MonoBehaviour
 {
-    public MonoBehaviour target;
+    public GameObject target;
     public BaseActivator activator;
 
     void Start()
