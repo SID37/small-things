@@ -10,6 +10,8 @@ public class ThingController : MonoBehaviour
     public PlayerController player;
     public Animator animator;
 
+    public Transform scaled;
+
     Rigidbody2D body;
     Vector3 deltaPos;
 
@@ -49,7 +51,10 @@ public class ThingController : MonoBehaviour
             collisionPoints[i].radius -= Time.deltaTime;
         }
 
-        body.velocity =  velocity.normalized * speed;
+
+        scaled.localScale = velocity.x < 0 ? new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
+
+        body.velocity = velocity.normalized * speed;
         transform.LookAt(transform.position + new Vector3(body.velocity.x, body.velocity.y, 65536), new Vector3(0, 0, 1));
     }
 

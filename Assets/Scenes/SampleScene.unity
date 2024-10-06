@@ -977,9 +977,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 1, b: 1, a: 1}
-  color2: {r: 0.84276724, g: 0.84276724, b: 0.84276724, a: 1}
-  range1: 10
-  range2: 1
+  color2: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  range1: 0.5
+  range2: 0.5
 --- !u!1 &570523508
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,7 +3130,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 69.73, y: 51.44, z: 1}
+  m_LocalScale: {x: 257.6, y: 51.44, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 784972680}

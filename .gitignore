@@ -33,6 +33,7 @@
 .gradle/
 
 *.png~
+*.jpg~
 *.kra~
 *.kra
 *.kra.meta

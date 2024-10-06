@@ -22,19 +22,26 @@ public class PlayerController : MonoBehaviour
     public Transform gunFirePoint;
     public GameObject bullet;
     public GameObject explosion;
+    public Transform scaledSprite;
 
     public Camera mainCamera;
     public Image deadScreen;
     public Image hintText;
+    public Animator animator;
 
     private Rigidbody2D body;
     private float reloadTime = 0;
     private float deadAlpha = 0;
+    private Vector3 scaledSpriteScale;
+    private Vector3 scaledGunScale;
+
 
     void Start()
     {
         Hint(false);
         body = GetComponent<Rigidbody2D>();
+        scaledSpriteScale = scaledSprite.localScale;
+        scaledGunScale = gun.localScale;
     }
 
     void Update()
@@ -42,6 +49,7 @@ public class PlayerController : MonoBehaviour
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos = new Vector3(mousePos.x, mousePos.y, 65536);
         gun.LookAt(mousePos, new Vector3(0, 0, 1));
+        gun.localScale = mousePos.x < gun.position.x ? scaledGunScale : new Vector3(-scaledGunScale.x, scaledGunScale.y, scaledGunScale.z);
         if (Input.GetButtonDown("Fire1") && reloadTime <= 0)
         {
             var fireDelta = mousePos - gun.position;
@@ -63,6 +71,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        var horisontal = Input.GetAxis("Horizontal");
+        if (Mathf.Abs(horisontal) > 0.1)
+        {
+            scaledSprite.localScale = horisontal < 0 ? scaledSpriteScale : new Vector3(-scaledSpriteScale.x, scaledSpriteScale.y, scaledSpriteScale.z);
+            animator.SetBool("walk", true);
+        }
+        else
+            animator.SetBool("walk", false);
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
     }
 
@@ -102,6 +118,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(RestartLevel(3));
             body.velocity = new Vector2(0, 0);
+            animator.speed = 0;
             enabled = false;
         }
     }
