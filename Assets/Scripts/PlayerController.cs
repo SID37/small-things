@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public List<AudioClip> hitSound;
 
     public AudioSource gunAudioSource;
+    public AudioSource walkAudioSource;
 
     private Rigidbody2D body;
     private float reloadTime = 0;
@@ -82,9 +83,14 @@ public class PlayerController : MonoBehaviour
         {
             scaledSprite.localScale = horisontal < 0 ? scaledSpriteScale : new Vector3(-scaledSpriteScale.x, scaledSpriteScale.y, scaledSpriteScale.z);
             animator.SetBool("walk", true);
+            if (!walkAudioSource.isPlaying)
+                walkAudioSource.Play();
         }
         else
+        {
             animator.SetBool("walk", false);
+            walkAudioSource.Stop();
+        }
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
     }
 
