@@ -18,7 +18,6 @@ public class ListActivator : BaseActivator
             if (!activator.activated)
                 return;
         }
-        Debug.Log("=== ACTIVATED!!! ===");
         activated = true;
     }
 }

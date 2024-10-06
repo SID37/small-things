@@ -14,7 +14,6 @@ public class InputActivator : BaseActivator
     {
         if (!activated && player != null && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log($"InputActivator: Enabled");
             activated = true;
             player.Hint(false);
         }

@@ -117,12 +117,17 @@ public class PlayerController : MonoBehaviour
         if (hp <= 0)
         {
             StartCoroutine(RestartLevel(3));
-            body.velocity = new Vector2(0, 0);
-            animator.speed = 0;
-            enabled = false;
+            StopGame();
         }
     }
-    
+
+    public void StopGame()
+    {
+        body.velocity = new Vector2(0, 0);
+        animator.speed = 0;
+        enabled = false;
+    }
+
     public IEnumerator RestartLevel(float delay)
     {
         yield return new WaitForSeconds(delay);
